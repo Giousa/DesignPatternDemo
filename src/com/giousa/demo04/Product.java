@@ -9,7 +9,6 @@ package com.giousa.demo04;
 public class Product {
 
     private String productName;
-
     private String companyName;
 
     private String part1;
@@ -79,7 +78,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "Product2{" +
                 "productName='" + productName + '\'' +
                 ", companyName='" + companyName + '\'' +
                 ", part1='" + part1 + '\'' +

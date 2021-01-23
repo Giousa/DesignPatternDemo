@@ -21,7 +21,7 @@ public class Test {
         c.method1();
 
 
-//        Product d =  ProductFactory.getProduct("D");
+//        Product2 d =  ProductFactory.getProduct("D");
 //        d.method1();
     }
 }

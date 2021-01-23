@@ -10,6 +10,8 @@ package com.giousa.demo04;
  *
  * 简单来说：将一个对象，拆分成n个子对象
  *
+ * 一般配合不可变对象进行使用
+ *
  * Author:zhangmengmeng
  * Date:2021/1/23
  * Email:65489469@qq.com
@@ -17,7 +19,7 @@ package com.giousa.demo04;
 public class BuilderTest {
 
     public static void main(String[] args) {
-//        Product product = new Product();
+//        Product2 product = new Product2();
 //        product.setCompanyName("xxx");
 //
 //        product.setPart1("1");
