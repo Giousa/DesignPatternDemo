@@ -1,4 +1,4 @@
-package com.giousa.demo01;
+package com.giousa.last.demo01;
 
 /**
  * Description: 饿汉式/饱汉式  一开始就创建了，非懒加载  线程安全，调用效率高，但浪费资源

@@ -1,4 +1,4 @@
-package com.giousa.demo04;
+package com.giousa.last.demo04;
 
 /**
  * Description: 建造者模式，是为了解决get和set属性不方便的情况

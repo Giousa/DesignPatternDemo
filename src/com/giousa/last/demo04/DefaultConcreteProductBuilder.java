@@ -1,4 +1,4 @@
-package com.giousa.demo04;
+package com.giousa.last.demo04;
 
 /**
  * Description: 自定义默认的构建方式

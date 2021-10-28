@@ -1,4 +1,4 @@
-package com.giousa.demo01;
+package com.giousa.last.demo01;
 
 /**
  * Description: 双检单例

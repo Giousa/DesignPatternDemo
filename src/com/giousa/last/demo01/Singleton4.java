@@ -1,4 +1,4 @@
-package com.giousa.demo01;
+package com.giousa.last.demo01;
 
 /**
  * Description: 静态内部类实现  线程安全，调用效率高，可以延时加载

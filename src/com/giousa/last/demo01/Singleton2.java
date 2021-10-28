@@ -1,4 +1,4 @@
-package com.giousa.demo01;
+package com.giousa.last.demo01;
 
 /**
  * Description: 懒汉式，线程不安全，调用效果不高，懒加载 我们需要加上锁，就变成安全了
