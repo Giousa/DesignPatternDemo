@@ -1,8 +1,4 @@
-package com.giousa.工厂模式;
-
-import com.giousa.工厂模式.course.ICourse;
-import com.giousa.工厂模式.course.JavaCourse;
-import com.giousa.工厂模式.course.PythonCourse;
+package com.giousa.工厂模式.course;
 
 public class CourseInfo {
 
