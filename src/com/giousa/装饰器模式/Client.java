@@ -3,9 +3,16 @@ package com.giousa.装饰器模式;
 public class Client {
 
     public static void main(String[] args) {
-        ConcreteComponent concreteComponent = new ConcreteComponent();
-        ConcreteDecoratorA concreteDecoratorA = new ConcreteDecoratorA(concreteComponent);
-        concreteDecoratorA.operation();
+        Component component;
+        component = new ConcreteComponent();
+
+        component = new ConcreteDecoratorA(component);
+
+        component = new ConcreteDecoratorB(component);
+
+        component = new ConcreteDecoratorA(component);
+
+        component.operation();
     }
 
     /**
