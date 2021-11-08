@@ -7,7 +7,7 @@ public class Client {
         abstractClassA.templateMethod();
 
         System.out.println("------------");
-        
+
         AbstractClass abstractClassB = new ConcreteClassB();
         abstractClassB.templateMethod();
     }
