@@ -3,20 +3,16 @@ package com.giousa.装饰器模式;
 public class Client {
 
     public static void main(String[] args) {
-        Component component;
-        component = new ConcreteComponent();
-
+        Component component = new ConcreteComponent();
         component = new ConcreteDecoratorA(component);
-
         component = new ConcreteDecoratorB(component);
-
-        component = new ConcreteDecoratorA(component);
-
+//        component = new ConcreteDecoratorA(component);
+//        component = new ConcreteDecoratorA(component);
         component.operation();
     }
 
     /**
-     * 抽象的组件对象
+     * 抽象的组件对象-被装饰者
      */
     static abstract class Component {
         public abstract void operation();
@@ -29,10 +25,13 @@ public class Client {
 
         @Override
         public void operation() {
-            System.out.println("处理业务逻辑");
+            System.out.println("ConcreteComponent 处理业务逻辑");
         }
     }
 
+    /**
+     * 装饰者
+     */
     static abstract class Decorator extends Component {
 
         /**
@@ -53,6 +52,7 @@ public class Client {
          * 转发请求给组件对象，可以在转发前后做一些其他操作
          */
         public void operation() {
+            System.out.println("Decorator operation: "+component.getClass());
             component.operation();
         }
     }
@@ -72,7 +72,7 @@ public class Client {
         }
 
         private void operationFirst() {
-            System.out.println("装饰器A first");
+            System.out.println("装饰器A first: ");
         }
 
         private void operationLast() {
@@ -80,6 +80,7 @@ public class Client {
         }
         public void operation() {
             operationFirst();
+            System.out.println("装饰器A operation: "+component.getClass());
             super.operation();
             operationLast();
         }
