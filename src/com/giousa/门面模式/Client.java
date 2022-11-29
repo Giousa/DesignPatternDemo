@@ -1,5 +1,9 @@
 package com.giousa.门面模式;
 
+
+/**
+ * 门面模式使用较多，如微服务架构，调用二方库接口的时候，我们会将某个微服务的接口，统一定义到某个Repo层里面。
+ */
 public class Client {
 
     public static void main(String[] args) {
