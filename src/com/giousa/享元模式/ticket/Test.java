@@ -10,7 +10,10 @@ public class Test {
         ticket1.showInfo("硬卧");
 
         ITicket ticket2 = TicketFlyweightFactory.queryTicket("阜阳", "上海");
+        ticket2.showInfo("硬卧");
         ITicket ticket3 = TicketFlyweightFactory.queryTicket("阜阳", "上海");
+        ticket3.showInfo("硬卧");
         ITicket ticket4 = TicketFlyweightFactory.queryTicket("阜阳", "上海");
+        ticket4.showInfo("硬卧");
     }
 }
