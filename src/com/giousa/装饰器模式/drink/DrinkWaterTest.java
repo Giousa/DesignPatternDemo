@@ -2,10 +2,9 @@ package com.giousa.装饰器模式.drink;
 
 public class DrinkWaterTest {
 
-    public static interface Drink{
+    public interface Drink{
         void drink();
     }
-
 
     public static class DrinkWater implements Drink{
 
@@ -21,10 +20,8 @@ public class DrinkWaterTest {
         private Drink drink;
 
         /**
-         * 装饰器和代理模式的区别主要是在这里
          * 装饰器：传入的是接口
          * 代理模式：不需要传值，直接new实现的对象
-         * @param drink
          */
         public DrinkDecorator(Drink drink) {
             this.drink = drink;
@@ -32,9 +29,17 @@ public class DrinkWaterTest {
 
         @Override
         public void drink() {
-            System.out.println("DrinkDecorator 装饰器前");
+            before();
             drink.drink();
-            System.out.println("DrinkDecorator 装饰器后");
+            after();
+        }
+
+        private void before() {
+            System.out.println("装饰器前 DrinkDecorator before request.");
+        }
+
+        private void after() {
+            System.out.println("装饰器后 DrinkDecorator after request.");
         }
     }
 
@@ -43,6 +48,5 @@ public class DrinkWaterTest {
         DrinkDecorator drinkDecorator = new DrinkDecorator(new DrinkWater());
         drinkDecorator.drink();
     }
-
 
 }
