@@ -5,14 +5,6 @@ package com.giousa.工厂模式;
  */
 public class Client {
 
-    public static void main(String[] args) {
-        IProduct product = ProductFactory.getProduct(1);
-        product.doSomething();
-
-        IProduct product2 = ProductFactory.getProduct(2);
-        product2.doSomething();
-    }
-
     public interface IProduct {
         void doSomething();
     }
@@ -59,10 +51,22 @@ public class Client {
                     return new ProductB();
 
                 case Constant.PRODUCT_C:
-                    return new ProductA();
+                    return new ProductC();
             }
 
             return null;
         }
+    }
+
+
+    public static void main(String[] args) {
+        IProduct product = ProductFactory.getProduct(1);
+        product.doSomething();
+
+        IProduct product2 = ProductFactory.getProduct(2);
+        product2.doSomething();
+
+        IProduct product3 = ProductFactory.getProduct(3);
+        product3.doSomething();
     }
 }

@@ -1,15 +1,9 @@
 package com.giousa.工厂模式;
 
+/**
+ * 抽象工厂模式
+ */
 public class ClientAbstract {
-
-    public static void main(String[] args) {
-
-        ConcreteFactoryA concreteFactoryA = new ConcreteFactoryA();
-
-        concreteFactoryA.makeProductA().doA();
-        concreteFactoryA.makeProductB().doB();
-    }
-
     public interface IProductA {
         void doA();
     }
@@ -56,7 +50,7 @@ public class ClientAbstract {
         }
     }
 
-    public static class ConcreteFactoryA implements IFactory{
+    public static class ConcreteFactoryA implements IFactory {
 
         @Override
         public IProductA makeProductA() {
@@ -69,7 +63,7 @@ public class ClientAbstract {
         }
     }
 
-    public static class ConcreteFactoryB implements IFactory{
+    public static class ConcreteFactoryB implements IFactory {
 
         @Override
         public IProductA makeProductA() {
@@ -80,5 +74,12 @@ public class ClientAbstract {
         public IProductB makeProductB() {
             return new ConcreteProductBWithFamilyB();
         }
+    }
+
+
+    public static void main(String[] args) {
+        ConcreteFactoryA concreteFactoryA = new ConcreteFactoryA();
+        concreteFactoryA.makeProductA().doA();
+        concreteFactoryA.makeProductB().doB();
     }
 }

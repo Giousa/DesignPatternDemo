@@ -5,23 +5,15 @@ package com.giousa.工厂模式;
  */
 public class ClientFactory {
 
-    public static void main(String[] args) {
-        FactoryA factoryA = new FactoryA();
-        factoryA.makeProduct().doSomething();
-
-        FactoryB factoryB = new FactoryB();
-        factoryB.makeProduct().doSomething();
-    }
-
-    public interface IProduct{
+    public interface IProduct {
         void doSomething();
     }
 
-    public interface IFactory{
+    public interface IFactory {
         IProduct makeProduct();
     }
 
-    public static class ProductA implements IProduct{
+    public static class ProductA implements IProduct {
 
         @Override
         public void doSomething() {
@@ -29,7 +21,7 @@ public class ClientFactory {
         }
     }
 
-    public static class ProductB implements IProduct{
+    public static class ProductB implements IProduct {
 
         @Override
         public void doSomething() {
@@ -37,7 +29,7 @@ public class ClientFactory {
         }
     }
 
-    public static class FactoryA implements IFactory{
+    public static class FactoryA implements IFactory {
 
         @Override
         public IProduct makeProduct() {
@@ -45,11 +37,19 @@ public class ClientFactory {
         }
     }
 
-    public static class FactoryB implements IFactory{
+    public static class FactoryB implements IFactory {
 
         @Override
         public IProduct makeProduct() {
             return new ProductB();
         }
+    }
+
+    public static void main(String[] args) {
+        FactoryA factoryA = new FactoryA();
+        factoryA.makeProduct().doSomething();
+
+        FactoryB factoryB = new FactoryB();
+        factoryB.makeProduct().doSomething();
     }
 }
