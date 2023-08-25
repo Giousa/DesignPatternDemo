@@ -2,12 +2,6 @@ package com.giousa.状态模式;
 
 public class Client {
 
-    public static void main(String[] args) {
-        Context context = new Context();
-        context.setCurrentState(new ConcreteStateA());
-        context.handle();
-    }
-
     static abstract class State {
         protected Context context;
 
@@ -60,5 +54,11 @@ public class Client {
         public void handle() {
             this.currentState.handle();
         }
+    }
+
+    public static void main(String[] args) {
+        Context context = new Context();
+        context.setCurrentState(new ConcreteStateA());
+        context.handle();
     }
 }
