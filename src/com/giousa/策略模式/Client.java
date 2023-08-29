@@ -7,38 +7,30 @@ package com.giousa.策略模式;
  */
 public class Client {
 
-    public static void main(String[] args) {
-        IStrategy strategy = new ConcreteStrategyA();
-        Context context = new Context(strategy);
-        context.algorithm();
-
-        IStrategy strategyB = new ConcreteStrategyB();
-        Context contextB = new Context(strategyB);
-        contextB.algorithm();
-    }
-
+    /**
+     * 策略接口，规定算法的统一操作
+     */
     interface IStrategy {
         void algorithm();
     }
 
-    static class Context {
-
-        private IStrategy strategy;
-
-        public Context(IStrategy strategy) {
-            this.strategy = strategy;
-        }
-
-        public void algorithm() {
-            this.strategy.algorithm();
+    /**
+     * 执行
+     */
+    public static class Exec {
+        public void fun(IStrategy iStrategy){
+            iStrategy.algorithm();
         }
     }
 
+    ///////////////////////////////////////////////////////////////////////////
+    // 封装各个算法
+    ///////////////////////////////////////////////////////////////////////////
     static class ConcreteStrategyA implements IStrategy {
 
         @Override
         public void algorithm() {
-            System.out.println("ConcreteStrategyA");
+            System.out.println("策略A，实现目标");
         }
     }
 
@@ -46,7 +38,16 @@ public class Client {
 
         @Override
         public void algorithm() {
-            System.out.println("ConcreteStrategyB");
+            System.out.println("策略B，实现目标");
         }
+    }
+
+    /**
+     * 测试
+     */
+    public static void main(String[] args) {
+        Exec exec = new Exec();
+        exec.fun(new ConcreteStrategyA());
+        exec.fun(new ConcreteStrategyB());
     }
 }

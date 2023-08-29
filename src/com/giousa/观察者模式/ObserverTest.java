@@ -5,12 +5,19 @@ import java.util.List;
 
 public class ObserverTest {
 
+
+    /**
+     * 观察者，或者叫订阅者
+     * 先定义一个观察者接口，里面只有一个方法，观察者就是在这个方法里面接收被观察者发送的状态改变通知。
+     */
     public interface Observer {
-        /**声明响应方法*/
+        //声明响应方法
         void response();
     }
 
-
+    /**
+     * 被观察者，或者叫订阅主题
+     */
     public static abstract class Subject {
 
         protected List<Observer> observerList = new ArrayList<Observer>();
@@ -31,10 +38,15 @@ public class ObserverTest {
             observerList.remove(observer);
         }
 
-        /**通知观察者*/
+        /**
+         * 通知观察者
+         */
         public abstract void notifyObserver();
     }
 
+    /**
+     * 具体被观察者
+     */
     public static class ConcreteSubject extends Subject{
 
         @Override
@@ -46,6 +58,9 @@ public class ObserverTest {
         }
     }
 
+    ///////////////////////////////////////////////////////////////////////////
+    // 观察者
+    ///////////////////////////////////////////////////////////////////////////
     public static class ConcreteObserver1 implements Observer{
 
         @Override
@@ -62,6 +77,10 @@ public class ObserverTest {
         }
     }
 
+    /**
+     * 测试
+     * @param args
+     */
     public static void main(String[] args) {
         Subject concreteSubject = new ConcreteSubject();
         //具体观察者
@@ -70,6 +89,7 @@ public class ObserverTest {
         concreteSubject.add(concreteObserver1);
         concreteSubject.add(concreteObserver2);
 
+        //被观察者发出通知
         concreteSubject.notifyObserver();
     }
 
