@@ -6,13 +6,6 @@ package com.giousa.门面模式;
  */
 public class Client {
 
-    public static void main(String[] args) {
-        Facade facade = new Facade();
-        facade.doA();
-        facade.doB();
-        facade.doC();
-    }
-
     static class SubSystemA{
         public void doA(){
             System.out.println("do A");
@@ -48,5 +41,12 @@ public class Client {
         public void doC(){
             subSystemC.doC();
         }
+    }
+
+    public static void main(String[] args) {
+        Facade facade = new Facade();
+        facade.doA();
+        facade.doB();
+        facade.doC();
     }
 }
